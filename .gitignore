@@ -1,0 +1,14 @@
+# Ignore virtual environments
+venv/
+__pycache__/
+phishing-detector-env/
+
+# Ignore model files (use Git LFS if needed)
+*.pkl
+
+# Ignore environment variables
+.env
+phishing-detector-env/
+phishing_email.csv
+*.dll
+*.lib
