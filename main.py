@@ -90,7 +90,7 @@ with open("vectorizer.pkl", "wb") as vec_file:
 
 # Flask API for real-time email classification
 app = Flask(__name__)
-CORS(app)  # ✅ Enable CORS for all routes
+CORS(app)  # Enable CORS for all routes
 
 @app.route('/')
 def home():
