@@ -1,4 +1,4 @@
-# 📌 AI Phishing Email Detector
+# 🐟 AI Phishing Email Detector
 🚀 **A Chrome extension that detects phishing emails using AI and warns users directly in Gmail.**  
 
 ---
