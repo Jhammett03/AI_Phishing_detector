@@ -9,6 +9,8 @@ phishing-detector-env/
 # Ignore environment variables
 .env
 phishing-detector-env/
+
+#file is too big to store in Github
 phishing_email.csv
 *.dll
 *.lib
