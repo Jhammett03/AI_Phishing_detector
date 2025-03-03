@@ -24,7 +24,7 @@ def load_data():
         # Print column names to confirm
         print("Columns in dataset:", df.columns)
 
-        # Rename 'text_combined' to 'email_text' if needed
+        # Rename 'text_combined' to 'email_text'
         if "text_combined" in df.columns:
             df.rename(columns={"text_combined": "email_text"}, inplace=True)
 
