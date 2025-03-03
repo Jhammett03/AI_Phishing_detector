@@ -32,6 +32,12 @@ The **AI Phishing Email Detector** is a **Chrome/Edge extension** that **automat
 
 ---
 
+## Training Data
+[Kaggle Phishing Email Dataset](https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset?resource=download&select=phishing_email.csv)
+specifically from phishing_email.csv
+
+--- 
+
 ## 📥 Installation
 To run the AI Phishing Detector **locally**, follow these steps:
 
