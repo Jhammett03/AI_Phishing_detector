@@ -31,12 +31,25 @@ The **AI Phishing Email Detector** is a **Chrome/Edge extension** that **automat
 🔹 **Deployment**: Render.com (for Flask backend)  
 
 ---
+### 📊 Training Data  
+We use a dataset containing phishing and non-phishing emails from [Kaggle Phishing Email Dataset](https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset?resource=download&select=phishing_email.csv)
+specifically from phishing_email.csv.  
+- **Data Preprocessing:** Emails are cleaned, stopwords removed, and text converted to TF-IDF features.  
+- **Train/Test Split:**  
+  - **80% (4,800 emails)** → Training data  
+  - **20% (1,200 emails)** → Test data  
+  - Balanced dataset: 3,000 phishing emails + 3,000 normal emails
 
-## Training Data
-[Kaggle Phishing Email Dataset](https://www.kaggle.com/datasets/naserabdullahalam/phishing-email-dataset?resource=download&select=phishing_email.csv)
-specifically from phishing_email.csv
+  #### See model_card.md for more information about the dataset and how it is manipulated.
 
 --- 
+
+### Model Persistence
+Once trained, the model is stored in `phishing_model.pkl` and the vectorizer in `vectorizer.pkl`.  
+- **You do not need to retrain each time you use the API**  
+- If you want to update the model with new data, re-run `train.py`
+
+---
 
 ## 📥 Installation
 To run the AI Phishing Detector **locally**, follow these steps:
@@ -46,11 +59,11 @@ To run the AI Phishing Detector **locally**, follow these steps:
 git clone https://github.com/Jhammett03/AI_Phishing_detector.git
 cd AI_Phishing_detector
 ```
-### 2️⃣ Backend Setup
+2️⃣ Backend Setup  
 The backend Flask API handles email classification.
 
 🔹 Set up a virtual environment (optional)
-```py
+```sh
 python -m venv venv
 source venv/bin/activate   # (Mac/Linux)
 venv\Scripts\activate      # (Windows)
@@ -59,9 +72,15 @@ venv\Scripts\activate      # (Windows)
 ```sh
 pip install -r requirements.txt
 ```
+🔹 Train the Model
+```sh
+python train.py
+```
+- This will generate phishing_model.pkl and vectorizer.pkl.
+
 🔹 Run the Flask Server
 ```sh
-python main.py
+python predict.py
 ```
 By default, the API runs at: http://127.0.0.1:5000
 
