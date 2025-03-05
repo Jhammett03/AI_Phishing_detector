@@ -57,6 +57,11 @@ y = np.array(df["label"])
 # Split dataset
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
+print(f"Total dataset size: {len(X.toarray())}")
+print(f"Training set size: {len(X_train.toarray())} ({len(X_train.toarray()) / len(X.toarray()) * 100:.2f}%)")
+print(f"Test set size: {len(X_test.toarray())} ({len(X_test.toarray()) / len(X.toarray()) * 100:.2f}%)")
+
+
 # Train model
 model = LogisticRegression()
 model.fit(X_train, y_train)
